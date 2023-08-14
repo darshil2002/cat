@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<ng-container *ngIf="mainData.length > 0; else spinner">
+<!-- start  -->
+
+
+<div class="card">
+    <div class="image-container">
+      <img src="{{ oneData.url }}" alt="Cat Image" (load)="onImageLoad($event)">
+    </div>
+    <div class="details">
+      <div class="name">{{ oneData.breeds[0].name }}</div>
+      <div class="description">
+        {{ oneData.breeds[0].description }}
+      </div>
+    </div>
+  </div>
+<!-- end  -->
+</ng-container>
+  
+<ng-template #spinner>
+    <!-- <div class="card"> -->
+        <p-progressSpinner></p-progressSpinner>
+    <!-- </div> -->
+</ng-template>
+  
